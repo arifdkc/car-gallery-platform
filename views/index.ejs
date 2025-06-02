@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <%- include('../partials/head') %>
+        <link rel="stylesheet" href="/css/index.css">
+
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="hero" aria-labelledby="mainHeading">
+                <div class="hero-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 id="mainHeading">Lüks Araç Dünyasına Hoşgeldiniz</h1>
+                        <p>Premium araç koleksiyonumuzda hayalinizdeki aracı bulun</p>
+                        <a href="/cars" class="btn btn-primary">Keşfet</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Cars Section -->
+            <section id="cars" class="featured-cars" aria-labelledby="featuredCarsHeading">
+                <div class="container">
+                    <header class="section-header">
+                        <h2 id="featuredCarsHeading">Öne Çıkan Araçlar</h2>
+                        <p>En kaliteli seçeneklerimiz</p>
+                    </header>
+
+                    <div class="car-grid">
+                        <!-- Car Card 1 -->
+                        <article class="car-card">
+                            <div class="car-image">
+                                <img src="/img/2024-bmw-5-serisi.jpg" alt="2024 BMW 5 Serisi ön görünüm" loading="lazy">
+                                <div class="car-badge">Yeni</div>
+                            </div>
+                            <div class="car-details">
+                                <h3>BMW 5 Serisi</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2024</span>
+                                    <span><i class="fas fa-tachometer-alt" aria-hidden="true"></i> 20.000 KM</span>
+                                    <span><i class="fas fa-gas-pump" aria-hidden="true"></i> Benzin</span>
+                                </div>
+                                <a href="/cars" class="btn btn-secondary">Detaylı Bilgi</a>
+                            </div>
+                        </article>
+
+                        <!-- Car Card 2 -->
+                        <article class="car-card">
+                            <div class="car-image">
+                                <img src="/img/2020-audi-a3-sportback.jpg" alt="2020 Audi A3 Sportback yan görünüm"
+                                    loading="lazy">
+                                <div class="car-badge">Popüler</div>
+                            </div>
+                            <div class="car-details">
+                                <h3>Audi A3</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2020</span>
+                                    <span><i class="fas fa-tachometer-alt" aria-hidden="true"></i> 15.000 KM</span>
+                                    <span><i class="fas fa-gas-pump" aria-hidden="true"></i> Benzin</span>
+                                </div>
+                                <a href="/cars" class="btn btn-secondary">Detaylı Bilgi</a>
+                            </div>
+                        </article>
+
+                        <!-- Car Card 3 -->
+                        <article class="car-card">
+                            <div class="car-image">
+                                <img src="/img/mercedes-benz.jpg" alt="2024 Mercedes C200 arka görünüm" loading="lazy">
+                                <div class="car-badge">Özel Fiyat</div>
+                            </div>
+                            <div class="car-details">
+                                <h3>Mercedes C200</h3>
+                                <div class="car-specs">
+                                    <span><i class="fas fa-calendar-alt" aria-hidden="true"></i> 2024</span>
+                                    <span><i class="fas fa-tachometer-alt" aria-hidden="true"></i> 30.000 KM</span>
+                                    <span><i class="fas fa-gas-pump" aria-hidden="true"></i> Hibrit</span>
+                                </div>
+                                <a href="/cars" class="btn btn-secondary">Detaylı Bilgi</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Car Slider Section -->
+
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide active">
+                        <img src="/img/dükkan1.png" alt="Araç galerisi görünümü 1" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/ofis1.png" alt="Araç galerisi ofis alanı" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/dükkaniçi2.jpg" alt="Araç galerisi iç mekan" loading="lazy">
+                    </div>
+                    <div class="slide">
+                        <img src="/img/dükkaniçi1.jpg" alt="Araç galerisi genel görünüm" loading="lazy">
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-prev"><i class="fas fa-chevron-left" aria-hidden="true"></i></button>
+                    <button class="slider-next"><i class="fas fa-chevron-right" aria-hidden="true"></i></button>
+                </div>
+                <div class="slider-dots"></div>
+            </div>
+            <!-- Features Section -->
+            <section class="features" aria-labelledby="featuresHeading">
+                <div class="feature-bg">
+                    <img src="/img/arkaplan.jpg" alt="Lüks araç arka plan görseli" loading="lazy">
+                </div>
+                <div class="container">
+                    <h2 id="featuresHeading" class="visually-hidden">Avantajlarımız</h2>
+                    <div class="feature-grid">
+                        <!-- Feature 1 -->
+                        <article class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-contract" aria-hidden="true"></i>
+                            </div>
+                            <h3>36 Ay'a varan vade</h3>
+                            <p>Esnek ödeme seçenekleri</p>
+                        </article>
+
+                        <!-- Feature 2 -->
+                        <article class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-car" aria-hidden="true"></i>
+                            </div>
+                            <h3>Test Sürüş İmkanı</h3>
+                            <p>Randevu alarak test sürüşü yapın</p>
+                        </article>
+
+                        <!-- Feature 3 -->
+                        <article class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-car-side" aria-hidden="true"></i>
+                            </div>
+                            <h3>Her Marka Model Araç</h3>
+                            <p>Geniş araç yelpazesi</p>
+                        </article>
+
+                        <!-- Feature 4 -->
+                        <article class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake" aria-hidden="true"></i>
+                            </div>
+                            <h3>Esnek Ödeme</h3>
+                            <p>Yarısı peşin yarısı taksit</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq" aria-labelledby="faqHeading">
+                <div class="container">
+                    <header class="section-header">
+                        <h2 id="faqHeading">Sıkça Sorulan Sorular</h2>
+                        <p>Merak ettikleriniz</p>
+                    </header>
+
+                    <div class="faq-grid">
+                        <!-- FAQ Item 1 -->
+                        <article class="faq-card">
+                            <header class="faq-header">
+                                <h3>Finansman seçenekleri nelerdir?</h3>
+                                <i class="fas fa-plus" aria-hidden="true"></i>
+                            </header>
+                            <div class="faq-content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam vel velit nesciunt
+                                    facilis odit optio illo.</p>
+                            </div>
+                        </article>
+
+                        <!-- FAQ Item 2 -->
+                        <article class="faq-card">
+                            <header class="faq-header">
+                                <h3>Araçların garantisi var mı?</h3>
+                                <i class="fas fa-plus" aria-hidden="true"></i>
+                            </header>
+                            <div class="faq-content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam vel velit nesciunt
+                                    facilis odit optio illo.</p>
+                            </div>
+                        </article>
+
+                        <!-- FAQ Item 3 -->
+                        <article class="faq-card">
+                            <header class="faq-header">
+                                <h3>İkinci el araç alırken nelere dikkat etmeliyim?</h3>
+                                <i class="fas fa-plus" aria-hidden="true"></i>
+                            </header>
+                            <div class="faq-content">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam vel velit nesciunt
+                                    facilis odit optio illo.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-outline">Tümünü Görüntüle</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Map Section -->
+            <section class="map" aria-label="Harita konumumuz">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19427.34071064618!2d13.399302363395696!3d52.507781461229584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e4f585aea57%3A0x465bf2a5efc09d21!2sMercedes-Benz%20AG%20%E2%80%93%20Mercedes-Benz%20Vertrieb%20Deutschland!5e0!3m2!1str!2str!4v1743068290989!5m2!1str!2str"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="İşletme konumu haritası">
+                </iframe>
+            </section>
+        </main>
+
+        <%- include('../partials/footer') %>
+
+            <!-- JavaScript -->
+            <script src="/js/script.js" defer></script>
+            <script src="/js/slider.js"></script>
+            <script src="/js/search.js"></script>
+            <script src="/js/filter.js"></script>
+            <script src="/js/mobile-menu.js"></script>
+</body>
+
+</html>

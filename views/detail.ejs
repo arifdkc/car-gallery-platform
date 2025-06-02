@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= car.brand %>
+            <%= car.model %>
+                <%= car.year %> | Detaylar
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/car-details.css">
+</head>
+
+<body>
+    
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="car-title">
+                    <%= car.brand %>
+                        <%= car.model %> <span>
+                                <%= car.year %>
+                            </span>
+                </h1>
+                <div class="price-badge">
+                    <span class="price">
+                        <%= car.price.toLocaleString('tr-TR') %> ₺
+                    </span>
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="car-detail-container">
+            <!-- Fotoğraf Galerisi -->
+            <section class="gallery-section">
+                <div class="gallery-container">
+                    <div class="main-slider">
+                        <div class="slider" id="main-slider">
+                            <% car.image.forEach((image, index)=> { %>
+                                <div class="slide <%= index === 0 ? 'active' : '' %>">
+                                    <img src="<%= image %>"
+                                        alt="<%= car.brand %> <%= car.model %> <%= index+1 %>. fotoğraf">
+                                </div>
+                                <% }) %>
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                            <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="slider-dots"></div>
+                    </div>
+
+                    <div class="thumbnail-container">
+                        <% car.image.forEach((image, index)=> { %>
+                            <div class="thumbnail <%= index === 0 ? 'active' : '' %>" data-index="<%= index %>">
+                                <img src="<%= image %>" alt="Thumbnail <%= index+1 %>">
+                            </div>
+                            <% }) %>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Araç Detayları -->
+            <section class="details-section">
+                <div class="details-grid">
+                    <!-- Teknik Özellikler -->
+                    <div class="specs-card">
+                       
+                            <h2 class="section-title"><i class="fas fa-info-circle"></i> İlan Bilgileri</h2>
+                            <div class="info-content">
+                                <div class="info-item">
+                                    <span class="info-label">İlan No:</span>
+                                    <span class="info-value">
+                                        <%= car.adverdNumber %>
+                                    </span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Yayın Tarihi:</span>
+                                    <span class="info-value">
+                                        <%= new Date(car.createdAt).toLocaleDateString('tr-TR', { year: 'numeric' ,
+                                            month: 'long' , day: 'numeric' }) %>
+                                    </span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Paket:</span>
+                                    <span class="info-value">
+                                        <%= car.packet %>
+                                    </span>
+                                </div>
+                            </div>
+                        
+                        <h2 class="section-title"><i class="fas fa-cogs"></i> Teknik Özellikler</h2>
+                        <div class="specs-grid">
+                            <div class="spec-item">
+                                <span class="spec-label">Marka</span>
+                                <span class="spec-value">
+                                    <%= car.brand %>
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Model</span>
+                                <span class="spec-value">
+                                    <%= car.model %>
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Yıl</span>
+                                <span class="spec-value">
+                                    <%= car.year %>
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Yakıt</span>
+                                <span class="spec-value">
+                                    <%= car.fuelType %>
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Vites</span>
+                                <span class="spec-value">
+                                    <%= car.gear %>
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Km</span>
+                                <span class="spec-value">
+                                    <%= car.km.toLocaleString('tr-TR') %> km
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Motor</span>
+                                <span class="spec-value">
+                                    <%= car.engine %> cc
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Güç</span>
+                                <span class="spec-value">
+                                    <%= car.horsePower %> HP
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Kasa</span>
+                                <span class="spec-value">
+                                    <%= car.caseType %>
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Renk</span>
+                                <span class="spec-value">
+                                    <%= car.color %>
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Plaka</span>
+                                <span class="spec-value">
+                                    <%= car.plate %>
+                                </span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-label">Hasar</span>
+                                <span class="spec-value">
+                                    <%= car.damage %>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- İlan Bilgileri -->
+                  
+
+                    <!-- Açıklama -->
+                    <div class="description-card">
+                        <h2 class="section-title"><i class="fas fa-align-left"></i> Açıklama</h2>
+                        <div class="description-content">
+                            <p><%- car.description %></p>
+                        </div>
+                    </div>
+
+                    <!-- İletişim -->
+                    <div class="contact-card">
+                        <h2 class="section-title"><i class="fas fa-phone-alt"></i> İletişim</h2>
+                        <div class="contact-content">
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <span>0555 123 45 67</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <span>info@otogaleri.com</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>1234 Cadde, İstanbul</span>
+                            </div>
+                            <button class="whatsapp-btn">
+                                <i class="fab fa-whatsapp"></i> WhatsApp'tan Mesaj Gönder
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>  
+    </main>
+
+   <%- include('../partials/footer') %>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Slider Fonksiyonları
+            const slider = document.getElementById('main-slider');
+            const slides = document.querySelectorAll('#main-slider .slide');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dotsContainer = document.querySelector('.slider-dots');
+
+            let currentIndex = 0;
+
+            // Slider Dots Oluştur
+            slides.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.dot');
+
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                // Slide aktif durumunu güncelle
+                slides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === currentIndex);
+                });
+
+                // Thumbnail aktif durumunu güncelle
+                thumbnails.forEach((thumb, index) => {
+                    thumb.classList.toggle('active', index === currentIndex);
+                });
+
+                // Dots aktif durumunu güncelle
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider();
+            });
+
+            // Thumbnail tıklamaları
+            thumbnails.forEach((thumb, index) => {
+                thumb.addEventListener('click', () => goToSlide(index));
+            });
+
+            // Klavye kontrolleri
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateSlider();
+                } else if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateSlider();
+                }
+            });
+
+            // Otomatik slider (isteğe bağlı)
+            let slideInterval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            }, 5000);
+
+            slider.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(() => {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateSlider();
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+
+</html>
