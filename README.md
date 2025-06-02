@@ -23,7 +23,7 @@ Bu proje, galeri sahiplerinin araç ilanlarını kolayca ekleyip yönetebileceğ
 ## 💻 Kurulum
 
 ```bash
-git clone https://github.com/KULLANICIADI/car-gallery-platform.git
+git clone https://github.com/arifdkc/car-gallery-platform.git
 cd car-gallery-platform
 npm install
 npm run dev
